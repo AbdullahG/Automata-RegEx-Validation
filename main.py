@@ -1,8 +1,11 @@
 from Models import *
 from test import *
+
+
 reg2 = "0*111*0001*0*"
 
-constructDFA(reg2,DFA.start)
+dfa = DFA()
+dfa.constructDFA(reg2,DFA.start)
 
 testList = []
 
@@ -18,7 +21,7 @@ testList.append(i4)
 
 for i in testList:
     try:
-        if isValid(i,DFA.start):
+        if dfa.isValid(i,DFA.start):
             print(i+" is VALID")
         else:
             print(i+" is INVALID")

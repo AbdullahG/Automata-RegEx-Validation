@@ -12,11 +12,11 @@ class Test:
             if self.testList.count(s) is 0:
                 self.testList.append(s)
 
-    def runTest(self,regex):
+    def runTest(self,dfa,regex):
         self.createTestSamples(regex)
-        constructDFA(regex,DFA.start)
+        dfa.constructDFA(regex,DFA.start)
         for i in self.testList:
-            if isValid(i,DFA.start):
+            if dfa.isValid(i,DFA.start):
                 print(i+" is VALID")
             else:
                 print(i+" is INVALID")
